@@ -1,0 +1,30 @@
+﻿
+> vantage@0.1.0 lint
+> eslint
+
+
+F:\cnn telugu\vantage\src\app\[lang]\HomePageClient.tsx
+  47:11  warning  'handleReadModeToggle' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  51:11  warning  'handleReadModeStyleChange' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  56:11  warning  'handleLangChange' is assigned a value but never used           @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\app\[lang]\[category]\CategoryPageClient.tsx
+  31:5  warning  'category' is defined but never used  @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\app\[lang]\live\LiveBlogClient.tsx
+    3:20  warning  'useEffect' is defined but never used                   @typescript-eslint/no-unused-vars
+  214:11  warning  'LiveWireClientProps' is defined but never used         @typescript-eslint/no-unused-vars
+  221:12  warning  'visibleUpdates' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  221:28  warning  'setVisibleUpdates' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\app\page.tsx
+  10:8  warning  'Newsletter' is defined but never used  @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\components\article\ArticleReader.tsx
+  24:5  warning  'relatedArticles' is defined but never used  @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\components\widgets\LiveScoreIsland.tsx
+  5:10  warning  'ChevronDown' is defined but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 11 problems (0 errors, 11 warnings)
+

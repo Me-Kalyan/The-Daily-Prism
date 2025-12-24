@@ -1,26 +1,303 @@
+/* Google Fonts - must be first */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Public+Sans:wght@400;500;600;700&family=Ramabhadra&family=Mandali&family=Black+Ops+One&display=swap');
+
 @import "tailwindcss";
 
+/* ============================================
+   THE DAILY PRISM - SWISS STYLE DESIGN SYSTEM
+   No glassmorphism, no soft shadows, solid colors
+   ============================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base Colors */
+  --background: #F8F9FA;
+  --foreground: #111111;
+  --card: #ffffff;
+  --card-foreground: #111111;
+  --border: #111111;
+  --muted: #e5e5e5;
+  --muted-foreground: #525252;
+
+  /* Category Colors */
+  --color-politics: #2563EB;
+  --color-markets: #059669;
+  --color-tech: #7C3AED;
+  --color-opinion: #D97706;
+  --color-breaking: #DC2626;
+  --color-environment: #16A34A;
+  --color-sports: #0891B2;
+  --color-entertainment: #DB2777;
+
+  /* Typography */
+  --font-heading: 'Archivo Black', sans-serif;
+  --font-body: 'Public Sans', sans-serif;
+  --font-heading-te: 'Ramabhadra', sans-serif;
+  --font-body-te: 'Mandali', sans-serif;
+
+  /* Hard Shadow */
+  --shadow-hard: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-hard-sm: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-hard-hover: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.dark {
+  --background: #111111;
+  --foreground: #F8F9FA;
+  --card: #1a1a1a;
+  --card-foreground: #F8F9FA;
+  --border: #F8F9FA;
+  --muted: #2a2a2a;
+  --muted-foreground: #a3a3a3;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-politics: var(--color-politics);
+  --color-markets: var(--color-markets);
+  --color-tech: var(--color-tech);
+  --color-opinion: var(--color-opinion);
+  --color-breaking: var(--color-breaking);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Configure Dark Mode variant for Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
 
+/* Base Styles */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+/* Telugu Language Support */
+.lang-te {
+  line-height: 1.8;
+  font-size: 1.1em;
+}
+
+.lang-te h1,
+.lang-te h2,
+.lang-te h3,
+.lang-te h4,
+.lang-te h5,
+.lang-te h6 {
+  font-family: var(--font-heading-te);
+  text-transform: none;
+}
+
+.lang-te p,
+.lang-te span,
+.lang-te div,
+.lang-te a {
+  font-family: var(--font-body-te);
+}
+
+/* Hard Shadow Utilities */
+.shadow-hard {
+  box-shadow: var(--shadow-hard);
+}
+
+.shadow-hard-sm {
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.shadow-hard-hover:hover {
+  box-shadow: var(--shadow-hard-hover);
+}
+
+/* Section Title with Category Underline */
+.section-title {
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  border-bottom: 4px solid currentColor;
+  margin-bottom: 1.5rem;
+}
+
+/* Category Color Classes */
+.category-politics {
+  --category-color: var(--color-politics);
+}
+
+.category-markets {
+  --category-color: var(--color-markets);
+}
+
+.category-tech {
+  --category-color: var(--color-tech);
+}
+
+.category-opinion {
+  --category-color: var(--color-opinion);
+}
+
+.category-breaking {
+  --category-color: var(--color-breaking);
+}
+
+.category-environment {
+  --category-color: var(--color-environment);
+}
+
+.category-sports {
+  --category-color: var(--color-sports);
+}
+
+.category-entertainment {
+  --category-color: var(--color-entertainment);
+}
+
+/* Solid Ticker */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 25s linear infinite;
+}
+
+/* Pulse for Breaking News */
+@keyframes pulse-dot {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 1s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--foreground);
+}
+
+/* Focus States */
+*:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+}
+
+/* Grid Lines for Mondrian Layout */
+.mondrian-grid {
+  display: grid;
+  border: 2px solid var(--border);
+}
+
+.mondrian-cell {
+  border: 1px solid var(--border);
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+.mondrian-cell:hover {
+  background-color: var(--category-color, var(--foreground));
+  color: white;
+}
+
+/* ============================================
+   READ MODE - Focus Toggle Styles
+   ============================================ */
+
+/* Read Mode: Sepia - Apply to html element */
+html.read-mode-sepia,
+html.read-mode-sepia body {
+  --background: #F4ECD8 !important;
+  --foreground: #433422 !important;
+  --card: #FAF6ED !important;
+  --card-foreground: #433422 !important;
+  --border: #433422 !important;
+  --muted: #E8DFC9 !important;
+  --muted-foreground: #6B5B47 !important;
+  background-color: #F4ECD8 !important;
+  color: #433422 !important;
+}
+
+/* Read Mode: Dark - Apply to html element */
+html.read-mode-dark,
+html.read-mode-dark body {
+  --background: #1a1a1a !important;
+  --foreground: #E8E8E8 !important;
+  --card: #252525 !important;
+  --card-foreground: #E8E8E8 !important;
+  --border: #3a3a3a !important;
+  --muted: #2a2a2a !important;
+  --muted-foreground: #999999 !important;
+  background-color: #1a1a1a !important;
+  color: #E8E8E8 !important;
+}
+
+/* Read Mode Active State */
+.read-mode-active .sidebar-content {
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.read-mode-active .main-content {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Transition for smooth mode switch */
+.read-mode-transition {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-transition {
+  transition: transform 0.4s ease-out, opacity 0.3s ease;
+}
+
+/* Force header and card backgrounds in read mode */
+html.read-mode-sepia header,
+html.read-mode-sepia .bg-card,
+html.read-mode-sepia .bg-background {
+  background-color: #FAF6ED !important;
+}
+
+html.read-mode-dark header,
+html.read-mode-dark .bg-card,
+html.read-mode-dark .bg-background {
+  background-color: #252525 !important;
 }

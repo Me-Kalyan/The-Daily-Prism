@@ -1,0 +1,21 @@
+﻿
+> vantage@0.1.0 lint
+> eslint
+
+
+F:\cnn telugu\vantage\src\app\[lang]\HomePageClient.tsx
+  25:24  warning  'setIsReadMode' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  26:27  warning  'setReadModeStyle' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\app\[lang]\[category]\CategoryPageClient.tsx
+  31:15  warning  '_category' is defined but never used  @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\app\[lang]\live\LiveBlogClient.tsx
+  217:12  warning  '_visibleUpdates' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  217:29  warning  '_setVisibleUpdates' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\components\article\ArticleReader.tsx
+  24:22  warning  '_relatedArticles' is defined but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 6 problems (0 errors, 6 warnings)
+

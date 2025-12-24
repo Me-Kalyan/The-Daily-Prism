@@ -1,0 +1,114 @@
+﻿
+> vantage@0.1.0 lint
+> eslint
+
+
+F:\cnn telugu\vantage\src\app\[lang]\HomePageClient.tsx
+  47:11  warning  'handleReadModeToggle' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  51:11  warning  'handleReadModeStyleChange' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  56:11  warning  'handleLangChange' is assigned a value but never used           @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\app\[lang]\[category]\CategoryPageClient.tsx
+  31:5  warning  'category' is defined but never used  @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\app\[lang]\[category]\page.tsx
+  189:79  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+F:\cnn telugu\vantage\src\app\[lang]\live\LiveBlogClient.tsx
+    3:20  warning  'useEffect' is defined but never used                   @typescript-eslint/no-unused-vars
+  214:11  warning  'LiveWireClientProps' is defined but never used         @typescript-eslint/no-unused-vars
+  221:12  warning  'visibleUpdates' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  221:28  warning  'setVisibleUpdates' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\app\[lang]\live\page.tsx
+  3:20  warning  'useEffect' is defined but never used  @typescript-eslint/no-unused-vars
+  4:21  warning  'Filter' is defined but never used     @typescript-eslint/no-unused-vars
+  4:43  warning  'Radio' is defined but never used      @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\app\api\dashboard\route.ts
+  36:13  error    'niftyValue' is never reassigned. Use 'const' instead   prefer-const
+  37:13  error    'niftyChange' is never reassigned. Use 'const' instead  prefer-const
+  47:23  warning  'marketData' is assigned a value but never used         @typescript-eslint/no-unused-vars
+  53:18  warning  'e' is defined but never used                           @typescript-eslint/no-unused-vars
+  79:14  warning  'error' is defined but never used                       @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\app\page.tsx
+  10:8   warning  'Newsletter' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+  60:20  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cnn telugu\vantage\src\app\page.tsx:60:20
+  58 |     const savedLang = localStorage.getItem('prism-lang') as 'en' | 'te' | null;
+  59 |     const savedTheme = localStorage.getItem('prism-theme');
+> 60 |     if (savedLang) setLang(savedLang);
+     |                    ^^^^^^^ Avoid calling setState() directly within an effect
+  61 |     if (savedTheme === 'dark') setIsDark(true);
+  62 |   }, []);
+  63 |  react-hooks/set-state-in-effect
+
+F:\cnn telugu\vantage\src\components\article\ArticleReader.tsx
+  24:5  warning  'relatedArticles' is defined but never used  @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\components\article\FactCheckLayout.tsx
+  8:10  warning  'categoryColors' is defined but never used  @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\components\layout\Header.tsx
+   5:53   warning  'Newspaper' is defined but never used              @typescript-eslint/no-unused-vars
+  21:93   warning  'readModeStyle' is defined but never used          @typescript-eslint/no-unused-vars
+  21:108  warning  'onReadModeStyleChange' is defined but never used  @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\components\layout\HeaderWrapper.tsx
+  19:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cnn telugu\vantage\src\components\layout\HeaderWrapper.tsx:19:13
+  17 |         const savedTheme = localStorage.getItem('prism-theme');
+  18 |         if (savedTheme === 'dark') {
+> 19 |             setIsDark(true);
+     |             ^^^^^^^^^ Avoid calling setState() directly within an effect
+  20 |             document.documentElement.classList.add('dark');
+  21 |         }
+  22 |     }, []);  react-hooks/set-state-in-effect
+
+F:\cnn telugu\vantage\src\components\news\FeedCard.tsx
+  7:23  warning  'categoryColors' is defined but never used  @typescript-eslint/no-unused-vars
+  7:39  warning  'Category' is defined but never used        @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\components\widgets\DashboardStrip.tsx
+  4:51  warning  'ArrowDown' is defined but never used     @typescript-eslint/no-unused-vars
+  7:38  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+F:\cnn telugu\vantage\src\components\widgets\LiveScoreIsland.tsx
+  5:10  warning  'ChevronDown' is defined but never used  @typescript-eslint/no-unused-vars
+
+F:\cnn telugu\vantage\src\components\widgets\PulsePolls.tsx
+  34:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+F:\cnn telugu\vantage\src\components\widgets\PulsePolls.tsx:34:13
+  32 |         const storedVote = localStorage.getItem(`poll-${poll.id}`);
+  33 |         if (storedVote) {
+> 34 |             setSelectedOption(storedVote);
+     |             ^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  35 |             setHasVoted(true);
+  36 |         }
+  37 |     }, [poll.id]);  react-hooks/set-state-in-effect
+
+Γ£û 31 problems (7 errors, 24 warnings)
+  2 errors and 0 warnings potentially fixable with the `--fix` option.
+
