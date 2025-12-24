@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# THE DAILY PRISM
 
-## Getting Started
+**A modern editorial news platform built with Next.js 16, React 19, and Tailwind CSS 4.**
 
-First, run the development server:
+Inspired by Swiss design principles — bold typography, high contrast, solid colors, and hard shadows. No glassmorphism. No soft shadows. Just clean, functional design.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✦ Features
+
+| Feature | Description |
+|---------|-------------|
+| **Bilingual Support** | Full English & Telugu (తెలుగు) language support |
+| **Dark Mode** | System-aware theme with manual toggle |
+| **Live Wire** | Real-time news updates with timeline UI |
+| **Fact Check** | Dedicated fact-checking articles with verdict stamps |
+| **Responsive** | Mobile-first design across all breakpoints |
+| **Swiss Design** | Mondrian-inspired Bento grid, hard shadows, solid colors |
+
+---
+
+## ⚡ Tech Stack
+
+```
+Next.js 16.1.1      →  App Router, Server Components
+React 19.2.3        →  React Compiler enabled
+Tailwind CSS 4      →  Modern CSS-first configuration
+Framer Motion       →  Smooth animations & transitions
+Lucide React        →  Consistent iconography
+TypeScript 5        →  Full type safety
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Clone the repository
+git clone https://github.com/Me-Kalyan/The-Daily-Prism.git
 
-## Learn More
+# Navigate to the project
+cd The-Daily-Prism
 
-To learn more about Next.js, take a look at the following resources:
+# Install dependencies
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Start development server
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/
+│   ├── [lang]/              # Language-specific routes (en/te)
+│   │   ├── [category]/      # Category pages (politics, tech, etc.)
+│   │   ├── live/            # Live Wire news feed
+│   │   ├── search/          # Search functionality
+│   │   └── page.tsx         # Homepage
+│   ├── api/
+│   │   └── dashboard/       # Dashboard data API
+│   └── globals.css          # Swiss design system tokens
+├── components/
+│   ├── article/             # Article readers & layouts
+│   ├── gallery/             # Masonry gallery
+│   ├── hero/                # Bento grid hero
+│   ├── layout/              # Header, Footer, TickerTape
+│   ├── news/                # News cards (Stacked, Feed, Verdict)
+│   ├── video/               # Cinematic video player
+│   └── widgets/             # Dashboard, Polls, Timeline
+└── lib/
+    ├── data/                # Sample news data
+    ├── dateUtils.ts         # Date formatting utilities
+    └── urlUtils.ts          # URL generation helpers
+```
+
+---
+
+## 🎨 Design System
+
+### Typography
+- **Headlines:** Archivo Black (uppercase)
+- **Body:** Public Sans
+- **Telugu Headlines:** Ramabhadra
+- **Telugu Body:** Mandali
+
+### Color Palette
+| Category | Color |
+|----------|-------|
+| Politics | `#2563EB` |
+| Markets | `#059669` |
+| Tech | `#7C3AED` |
+| Opinion | `#D97706` |
+| Breaking | `#DC2626` |
+
+### Effects
+- **Hard Shadow:** `4px 4px 0px 0px rgba(0,0,0,1)`
+- **Borders:** 2px solid black/white
+- **No gradients, no blur, no rounded corners**
+
+---
+
+## 📜 Scripts
+
+```bash
+npm run dev      # Start development server
+npm run build    # Production build
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
+
+---
+
+## 📄 License
+
+MIT License — feel free to use this project for learning and inspiration.
+
+---
+
+<p align="center">
+  <strong>THE DAILY PRISM</strong><br/>
+  <sub>Modern Editorial News Platform</sub>
+</p>
