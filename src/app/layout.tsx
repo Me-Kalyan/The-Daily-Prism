@@ -56,6 +56,9 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-verification-code",
   },
+  icons: {
+    icon: '/icon',
+  },
   alternates: {
     canonical: siteUrl,
     languages: {
