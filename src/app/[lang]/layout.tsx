@@ -34,6 +34,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         description: lang === 'te'
             ? 'బ్రేకింగ్ న్యూస్, లోతైన విశ్లేషణ మరియు ఎడిటోరియల్ కవరేజ్'
             : 'Breaking news, in-depth analysis, and editorial coverage',
+        openGraph: {
+            images: ['/og-image.png'],
+        },
+        twitter: {
+            images: ['/og-image.png'],
+        },
     };
 }
 
